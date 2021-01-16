@@ -5,11 +5,11 @@ import numpy as np
 #Define the function for easy use throughout the programme.
 def B(A, Z):	#Binding energy function.
     N = A - Z
-    v = a_v * float(A)
+    v = a_v * A
     s = a_s * A**(2.0/3.0)
     c = a_c * Z**2.0 / A**(1.0/3.0)
     a = a_a * (N - Z)**2.0 / A
-    return v - a - c - a + delta
+    return v - s - c - a + delta
 
 
 #Asking the user to decide how to proceed for the variable definitions.
@@ -44,6 +44,6 @@ Z = np.arange(Zlo, Zup, 1)
 
 file = open("binding_energies.txt", 'w')
 for i in Z:
-    print("Binding energy for Z = {} = {} MeV" .format(i, '%.5f' %B(A, i)))
+    print("Binding energy for Z = {} is B = {} MeV" .format(i, '%.5f' %B(A, i)))
     file.write(str(B(A, i)) + "\n")
 file.close()
