@@ -42,6 +42,12 @@ if __name__ == "__main__":
     Z = np.arange(Zlo, Zup, 1)
 
 
+    #ERROR CHECK: Check for Zup<Zlo.
+    if Zup <= Zlo:
+        print("Zup <= Zlo. Program failed to execute correctly. Exiting")
+        exit(1)
+
+
     file = open("binding_energies.txt", 'w')
     for i in Z:
         print("Binding energy for Z = {} is B = {} MeV" .format(i, '%.5f' \
