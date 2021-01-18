@@ -26,10 +26,10 @@ if __name__ == "__main__":
         a_v = 15.56; a_s = 17.23; a_c = 0.7; a_a = 23.28
         delta = float(input("Input delta:"))
         print("""a_v = {}
-    a_s = {}
-    a_c = {}
-    a_a = {}
-    delta = {}""" .format(a_v, a_s, a_c, a_a, delta))
+a_s = {}
+a_c = {}
+a_a = {}
+delta = {}""" .format(a_v, a_s, a_c, a_a, delta))
 
 
     #Take the values of each nuclear variable from user.
@@ -52,5 +52,5 @@ if __name__ == "__main__":
     for i in Z:
         print("Binding energy for Z = {} is B = {} MeV" .format(i, '%.5f' \
             %binding_energy(A, i)))
-        file.write(str(B(A, i)) + "\n")
+        file.write(str(binding_energy(A, i)) + "\n")
     file.close()
